@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khoya - Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lacquer&family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="enter-screen" onclick="startSite()">
+        <div class="enter-content">
+            <p class="click-text">Click to vist</p>
+        </div>
+    </div>
+
+    <div id="snow-container"></div>
+
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="assets/video/bg.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+
+    <audio id="bg-music" loop>
+        <source src="assets/music/music.mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="mute-btn" onclick="toggleMute()">
+        <img src="assets/icons/unmute.svg" id="mute-icon" alt="Mute">
+    </button>
+
+    <main class="container" id="main-content">
+        <div class="glass-card" id="profile-card">
+            
+            <div class="card-stats">
+                <div class="stat"><img src="assets/icons/eye.svg" alt="Views"> <span>1.2k</span></div>
+                <div class="stat"><img src="assets/icons/hashtag.svg" alt="Rank"> <span>1932</span></div>
+            </div>
+
+            <div class="header-section">
+                <img src="assets/images/banner.png" alt="Banner" class="banner-img">
+                <div class="avatar-wrapper">
+                    <img src="assets/images/avatar.gif" alt="Avatar" class="avatar-img">
+                </div>
+            </div>
+            
+            <div class="content">
+                <h1 class="username typewriter">Khoya</h1>
+                
+                <div class="badges">
+                    <span>Berlin</span>
+                    <span>Designer</span>   
+                    <span>Developer</span>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="projects-section">
+                    <h3>My Projects</h3>
+                    <ul class="project-list">
+                        <li>KunaMarket</li>
+                        <li></li>
+                    </ul>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="social-links">
+                    <a href="javascript:void(0)" class="icon-link" onclick="copyDiscord('khoya.berlin')">
+                        <img src="assets/icons/discord.svg" alt="Discord">
+                    </a>
+                    <a href="https://www.snapchat.com/add/khoya.berlin" class="icon-link" target="_blank"><img src="assets/icons/snapchat.svg" alt="Snap"></a>
+                    <a href="https://open.spotify.com/user/3167po5bcyxhjavweboebr4wqgey?si=ea9c3e76499e4fcb" class="icon-link" target="_blank"><img src="assets/icons/spotify.svg" alt="Spotify"></a>
+                    <a href="https://tiktok.com/khya0riginal" class="icon-link" target="_blank"><img src="assets/icons/tiktok.svg" alt="TikTok"></a>
+                    <a href="https://www.youtube.com/@khoyaberlin" class="icon-link" target="_blank"><img src="assets/icons/youtube.svg" alt="YouTube"></a>
+                    <a href="https://discord.gg/kunamarket" class="icon-link" target="_blank"><img src="assets/icons/kuna.svg" alt="Kuna Market"></a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="copy-alert">Copied to Clipboard!</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
