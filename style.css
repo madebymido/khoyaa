@@ -1,5 +1,36 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin: 0; padding: 0; box-sizing: border-box; }* { margin: 0; padding: 0; box-sizing: border-box; }
 body { background: #000; height: 100vh; display: flex; justify-content: center; align-items: center; overflow: hidden; color: #fff; font-family: 'Ubuntu', sans-serif; }
+
+/* --- CUSTOM TOOLTIPS (NEU) --- */
+[data-tooltip] {
+    position: relative;
+}
+
+[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 130%; /* Erscheint über dem Element */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 7px 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.75rem;
+    color: #fff;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    z-index: 1000;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+[data-tooltip]:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
 
 /* Snowfall */
 #snow-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 5; }
@@ -47,4 +78,49 @@ body { background: #000; height: 100vh; display: flex; justify-content: center; 
 .icon-link img { width: 35px; filter: invert(1); opacity: 0.8; transition: 0.3s; }
 .icon-link:hover img { transform: scale(1.3); filter: invert(1) drop-shadow(0 0 15px #fff); opacity: 1; }
 
+#copy-alert { position: fixed; bottom: 50px; left: 50%; transform: translateX(-50%); background: rgba(255,255,255,0.2); backdrop-filter: blur(15px); padding: 15px 30px; border-radius: 20px; border: 1px solid #fff; display: none; z-index: 10000; }
+
+/* --- Handy-Anpassung (nur für kleine Bildschirme) --- */
+@media (max-width: 600px) {
+    
+    /* Sorgt dafür, dass die Karte nicht breiter als das Handy ist */
+    .glass-card {
+        width: 95% !important; /* Nutzt fast die volle Breite */
+        max-width: 400px;
+        margin: 10px;
+    }
+
+    /* Verkleinert den Namen, damit er nicht umbricht */
+    .username {
+        font-size: 2.2rem !important;
+        margin-top: 50px !important;
+    }
+
+    /* Passt das Banner und den Avatar an */
+    .header-section {
+        height: 130px !important;
+    }
+    
+    .avatar-wrapper {
+        width: 90px !important;
+        height: 90px !important;
+        bottom: -45px !important;
+    }
+
+    /* Verhindert, dass die Social-Icons aus der Karte fliegen */
+    .social-links {
+        gap: 10px !important;
+        flex-wrap: wrap; /* Icons gehen in die nächste Zeile, wenn kein Platz ist */
+        padding: 0 10px;
+    }
+
+    .icon-link img {
+        width: 25px !important; /* Icons etwas kleiner für Mobile */
+    }
+
+    /* Deaktiviert Tooltips auf Handy (da man dort nicht hovern kann) */
+    [data-tooltip]::after {
+        display: none !important;
+    }
+}
 #copy-alert { position: fixed; bottom: 50px; left: 50%; transform: translateX(-50%); background: rgba(255,255,255,0.2); backdrop-filter: blur(15px); padding: 15px 30px; border-radius: 20px; border: 1px solid #fff; display: none; z-index: 10000; }
