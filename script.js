@@ -1,6 +1,7 @@
 const music = document.getElementById('bg-music');
 const muteIcon = document.getElementById('mute-icon');
 
+// Startet die Seite und die Effekte
 function startSite() {
     document.getElementById('enter-screen').style.opacity = '0';
     setTimeout(() => {
@@ -8,16 +9,22 @@ function startSite() {
         const main = document.getElementById('main-content');
         main.style.display = 'block';
         setTimeout(() => main.style.opacity = '1', 50);
-        music.play();
+        
+        // Musik abspielen
+        music.play().catch(error => console.log("Autoplay von Browser blockiert"));
+        
+        // Schnee erzeugen
         createSnow();
     }, 1200);
 }
 
+// Mute/Unmute Funktion mit Icon-Wechsel
 function toggleMute() {
     music.muted = !music.muted;
     muteIcon.src = music.muted ? "assets/icons/mute.svg" : "assets/icons/unmute.svg";
 }
 
+// Discord Name kopieren & Alert anzeigen
 function copyDiscord(val) {
     navigator.clipboard.writeText(val);
     const alert = document.getElementById('copy-alert');
@@ -25,6 +32,7 @@ function copyDiscord(val) {
     setTimeout(() => alert.style.display = 'none', 2500);
 }
 
+// Schnee-Logik
 function createSnow() {
     const container = document.getElementById('snow-container');
     for (let i = 0; i < 50; i++) {
@@ -39,9 +47,12 @@ function createSnow() {
     }
 }
 
+// 3D Parallax Effekt für die Karte
 document.addEventListener('mousemove', (e) => {
     const card = document.getElementById('profile-card');
-    const x = (window.innerWidth / 2 - e.pageX) / 35;
-    const y = (window.innerHeight / 2 - e.pageY) / 35;
-    card.style.transform = `rotateY(${x}deg) rotateX(${-y}deg)`;
+    if (card) {
+        const x = (window.innerWidth / 2 - e.pageX) / 35;
+        const y = (window.innerHeight / 2 - e.pageY) / 35;
+        card.style.transform = `rotateY(${x}deg) rotateX(${-y}deg)`;
+    }
 });
