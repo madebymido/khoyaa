@@ -11,11 +11,12 @@ The website is built to present projects, ideas, and content in a clean and mode
 - Deployed with **Vercel**
 - Easy to maintain and extend
 ## 🛠️ Tech Stack
-- Frontend: *(e.g. HTML, CSS, JavaScript / React / Next.js — adjust if needed)*
+- Frontend: *(e.g. HTML, CSS, JavaScript)*
 - Hosting: **Vercel**
 ## 🚀 Deployment
 The website is automatically deployed via **Vercel**.  
 Every update to the main branch is reflected live.
+Easy to set up.
 ## 📂 Project Status
 This project is actively maintained and may receive updates and improvements over time.
 ## 📄 License
@@ -23,3 +24,4 @@ This project is licensed under the **MIT License**.
 Feel free to use it as inspiration, but please give credit if you reuse major parts.
 ---
 Made with ❤️ by **Khoyaa**
+If you need help, feel free to write me direct message on discord: khoya.berlin
