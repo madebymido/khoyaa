@@ -1,5 +1,5 @@
 # khoyaa.vercel.app 🌐
-## 🇩🇪 Deutsch
+## Deutsch
 Dieses Repository enthält den Source-Code für **khoyaa.vercel.app**, meine persönliche Website.  
 Die Website wurde entwickelt, um Projekte, Ideen und Inhalte in einem modernen, übersichtlichen Design darzustellen – optimiert für Performance und Barrierefreiheit.
 Diese Website wurde mit hilfe von Künstlicher Intelligenz erstellt!
@@ -23,7 +23,7 @@ Dieses Projekt wird aktiv gepflegt und kann jederzeit Updates und Verbesserungen
 ### 📄 Benutzung 
 Du kannst es gerne kostenlos nutzen, weiterverkauf ist jedoch verboten!
 ---
-## 🇬🇧 English
+## English
 This repository contains the source code (or reference) for **khoyaa.vercel.app**, my personal website.  
 The website is built to present projects, ideas, and content in a clean and modern way, optimized for performance and accessibility.
 This website was created with the help of artificial intelligence!
